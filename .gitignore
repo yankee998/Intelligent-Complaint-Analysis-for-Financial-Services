@@ -20,3 +20,6 @@ Thumbs.db
 *.bak
 *.swp
 *~
+!vector_store/complaint_embeddings.faiss
+!vector_store/chunk_metadata.pkl
+model_cache/
