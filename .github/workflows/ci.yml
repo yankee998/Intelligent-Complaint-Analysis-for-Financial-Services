@@ -23,3 +23,9 @@ jobs:
     - name: Check notebook syntax
       run: |
         jupyter nbconvert --to python notebooks/eda_preprocessing.ipynb --stdout | python -m py_compile
+    - name: Check Task 2 script syntax
+      run: |
+        python -m py_compile scripts/chunk_embed_index.py
+    - name: Check Task 3 script syntax
+      run: |
+        python -m py_compile scripts/rag_pipeline.py
