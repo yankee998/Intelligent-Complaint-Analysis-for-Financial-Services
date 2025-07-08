@@ -11,11 +11,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.13
-      uses: actions/setup-python@v4
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.13'
+        python-version: '3.11' # Use 3.11 for broader compatibility
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -29,3 +29,6 @@ jobs:
     - name: Check Task 3 script syntax
       run: |
         python -m py_compile scripts/rag_pipeline.py
+    - name: Run basic tests
+      run: |
+        python -c "import pandas, faiss, sentence_transformers, langchain_community, transformers, torch; print('Dependencies loaded successfully')"
